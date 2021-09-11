@@ -1,3 +1,3 @@
-defmodule BladesinthedarkWeb.PageView do
-  use BladesinthedarkWeb, :view
+defmodule BladesInTheDarkWeb.PageView do
+  use BladesInTheDarkWeb, :view
 end

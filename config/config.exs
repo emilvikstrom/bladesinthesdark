@@ -8,14 +8,14 @@
 use Mix.Config
 
 config :bladesinthedark,
-  ecto_repos: [Bladesinthedark.Repo]
+  ecto_repos: [BladesInTheDark.Repo]
 
 # Configures the endpoint
-config :bladesinthedark, BladesinthedarkWeb.Endpoint,
+config :bladesinthedark, BladesInTheDarkWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "TqUtftRm6X/L17eBakern9TuqK85/Xm8CIpbD1+E0rT7q/+BzIyJLgVrrNds1m6c",
-  render_errors: [view: BladesinthedarkWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: Bladesinthedark.PubSub,
+  render_errors: [view: BladesInTheDarkWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: BladesInTheDark.PubSub,
   live_view: [signing_salt: "1sQ4bqTG"]
 
 # Configures Elixir's Logger

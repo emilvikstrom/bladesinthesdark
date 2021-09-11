@@ -1,5 +1,5 @@
-defmodule BladesinthedarkWeb.ErrorView do
-  use BladesinthedarkWeb, :view
+defmodule BladesInTheDarkWeb.ErrorView do
+  use BladesInTheDarkWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

@@ -1,12 +1,12 @@
-defmodule BladesinthedarkWeb do
+defmodule BladesInTheDarkWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use BladesinthedarkWeb, :controller
-      use BladesinthedarkWeb, :view
+      use BladesInTheDarkWeb, :controller
+      use BladesInTheDarkWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,11 +19,11 @@ defmodule BladesinthedarkWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: BladesinthedarkWeb
+      use Phoenix.Controller, namespace: BladesInTheDarkWeb
 
       import Plug.Conn
-      import BladesinthedarkWeb.Gettext
-      alias BladesinthedarkWeb.Router.Helpers, as: Routes
+      import BladesInTheDarkWeb.Gettext
+      alias BladesInTheDarkWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -31,7 +31,7 @@ defmodule BladesinthedarkWeb do
     quote do
       use Phoenix.View,
         root: "lib/bladesinthedark_web/templates",
-        namespace: BladesinthedarkWeb
+        namespace: BladesInTheDarkWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule BladesinthedarkWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import BladesinthedarkWeb.Gettext
+      import BladesInTheDarkWeb.Gettext
     end
   end
 
@@ -66,9 +66,9 @@ defmodule BladesinthedarkWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import BladesinthedarkWeb.ErrorHelpers
-      import BladesinthedarkWeb.Gettext
-      alias BladesinthedarkWeb.Router.Helpers, as: Routes
+      import BladesInTheDarkWeb.ErrorHelpers
+      import BladesInTheDarkWeb.Gettext
+      alias BladesInTheDarkWeb.Router.Helpers, as: Routes
     end
   end
 

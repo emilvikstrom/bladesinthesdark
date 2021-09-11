@@ -1,4 +1,4 @@
-# Bladesinthedark
+# BladesInTheDark
 
 To start your Phoenix server:
 

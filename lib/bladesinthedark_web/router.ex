@@ -1,5 +1,5 @@
-defmodule BladesinthedarkWeb.Router do
-  use BladesinthedarkWeb, :router
+defmodule BladesInTheDarkWeb.Router do
+  use BladesInTheDarkWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule BladesinthedarkWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", BladesinthedarkWeb do
+  scope "/", BladesInTheDarkWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", BladesinthedarkWeb do
+  # scope "/api", BladesInTheDarkWeb do
   #   pipe_through :api
   # end
 
@@ -36,7 +36,7 @@ defmodule BladesinthedarkWeb.Router do
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: BladesinthedarkWeb.Telemetry
+      live_dashboard "/dashboard", metrics: BladesInTheDarkWeb.Telemetry
     end
   end
 end

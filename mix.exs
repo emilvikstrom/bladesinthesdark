@@ -1,4 +1,4 @@
-defmodule Bladesinthedark.MixProject do
+defmodule BladesInTheDark.MixProject do
   use Mix.Project
 
   def project do
@@ -19,7 +19,7 @@ defmodule Bladesinthedark.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Bladesinthedark.Application, []},
+      mod: {BladesInTheDark.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

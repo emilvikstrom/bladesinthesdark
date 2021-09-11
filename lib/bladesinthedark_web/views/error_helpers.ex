@@ -1,4 +1,4 @@
-defmodule BladesinthedarkWeb.ErrorHelpers do
+defmodule BladesInTheDarkWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -39,9 +39,9 @@ defmodule BladesinthedarkWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(BladesinthedarkWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(BladesInTheDarkWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(BladesinthedarkWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(BladesInTheDarkWeb.Gettext, "errors", msg, opts)
     end
   end
 end

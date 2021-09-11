@@ -1,6 +1,6 @@
-defmodule Bladesinthedark do
+defmodule BladesInTheDark do
   @moduledoc """
-  Bladesinthedark keeps the contexts that define your domain
+  BladesInTheDark keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

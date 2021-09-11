@@ -1,14 +1,14 @@
-defmodule BladesinthedarkWeb.ErrorViewTest do
-  use BladesinthedarkWeb.ConnCase, async: true
+defmodule BladesInTheDarkWeb.ErrorViewTest do
+  use BladesInTheDarkWeb.ConnCase, async: true
 
   # Bring render/3 and render_to_string/3 for testing custom views
   import Phoenix.View
 
   test "renders 404.html" do
-    assert render_to_string(BladesinthedarkWeb.ErrorView, "404.html", []) == "Not Found"
+    assert render_to_string(BladesInTheDarkWeb.ErrorView, "404.html", []) == "Not Found"
   end
 
   test "renders 500.html" do
-    assert render_to_string(BladesinthedarkWeb.ErrorView, "500.html", []) == "Internal Server Error"
+    assert render_to_string(BladesInTheDarkWeb.ErrorView, "500.html", []) == "Internal Server Error"
   end
 end

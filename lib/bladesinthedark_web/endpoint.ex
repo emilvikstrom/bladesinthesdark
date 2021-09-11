@@ -1,4 +1,4 @@
-defmodule BladesinthedarkWeb.Endpoint do
+defmodule BladesInTheDarkWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :bladesinthedark
 
   # The session will be stored in the cookie and signed,
@@ -10,7 +10,7 @@ defmodule BladesinthedarkWeb.Endpoint do
     signing_salt: "HrB+jA7S"
   ]
 
-  socket "/socket", BladesinthedarkWeb.UserSocket,
+  socket "/socket", BladesInTheDarkWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -50,5 +50,5 @@ defmodule BladesinthedarkWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug BladesinthedarkWeb.Router
+  plug BladesInTheDarkWeb.Router
 end

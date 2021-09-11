@@ -1,7 +1,7 @@
 use Mix.Config
 
 # Configure your database
-config :bladesinthedark, Bladesinthedark.Repo,
+config :bladesinthedark, BladesInTheDark.Repo,
   username: "postgres",
   password: "postgres",
   database: "bladesinthedark_dev",
@@ -15,7 +15,7 @@ config :bladesinthedark, Bladesinthedark.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :bladesinthedark, BladesinthedarkWeb.Endpoint,
+config :bladesinthedark, BladesInTheDarkWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -55,7 +55,7 @@ config :bladesinthedark, BladesinthedarkWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :bladesinthedark, BladesinthedarkWeb.Endpoint,
+config :bladesinthedark, BladesInTheDarkWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",

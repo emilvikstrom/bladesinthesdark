@@ -1,3 +1,3 @@
-defmodule BladesinthedarkWeb.LayoutView do
-  use BladesinthedarkWeb, :view
+defmodule BladesInTheDarkWeb.LayoutView do
+  use BladesInTheDarkWeb, :view
 end

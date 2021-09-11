@@ -1,5 +1,5 @@
-defmodule BladesinthedarkWeb.PageControllerTest do
-  use BladesinthedarkWeb.ConnCase
+defmodule BladesInTheDarkWeb.PageControllerTest do
+  use BladesInTheDarkWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")
