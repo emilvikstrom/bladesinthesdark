@@ -7,6 +7,10 @@
 # General application configuration
 use Mix.Config
 
+read_config = fn config_file ->
+  File.read!("priv/static/text/#{config_file}.txt") |> String.split("\n", trim: true)
+end
+
 config :bladesinthedark,
   ecto_repos: [BladesInTheDark.Repo]
 
@@ -17,6 +21,14 @@ config :bladesinthedark, BladesInTheDarkWeb.Endpoint,
   render_errors: [view: BladesInTheDarkWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: BladesInTheDark.PubSub,
   live_view: [signing_salt: "1sQ4bqTG"]
+
+config :bladesinthedark, BladesInTheDark.People,
+  names: read_config.("people_names"),
+  family_names: read_config.("people_family_names"),
+  goals: read_config.("people_goals"),
+  physique: read_config.("people_physique"),
+  gender: read_config.("people_gender"),
+  preferred_methods: read_config.("people_preferred_methods")
 
 # Configures Elixir's Logger
 config :logger, :console,
