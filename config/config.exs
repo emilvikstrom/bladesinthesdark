@@ -8,7 +8,7 @@
 use Mix.Config
 
 read_config = fn config_file ->
-  File.read!("priv/static/text/#{config_file}.txt") |> String.split("\n", trim: true)
+  File.read!("config/text/#{config_file}.txt") |> String.split("\n", trim: true)
 end
 
 config :bladesinthedark,
@@ -28,7 +28,13 @@ config :bladesinthedark, BladesInTheDark.People,
   goals: read_config.("people_goals"),
   physique: read_config.("people_physique"),
   gender: read_config.("people_gender"),
-  preferred_methods: read_config.("people_preferred_methods")
+  preferred_methods: read_config.("people_preferred_methods"),
+  heritage: read_config.("people_heritage"),
+  common_profession: read_config.("people_common_profession"),
+  rare_profession: read_config.("people_rare_profession"),
+  traits: read_config.("people_traits"),
+  interests: read_config.("people_interests"),
+  quirks: read_config.("people_quirks")
 
 # Configures Elixir's Logger
 config :logger, :console,
