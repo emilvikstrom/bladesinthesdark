@@ -25,7 +25,10 @@ defmodule BladesInTheDark.People do
           style: binary | nil,
           goals: binary,
           preferred_methods: binary,
-          profession: binary
+          profession: binary,
+          traits: binary,
+          interests: binary,
+          quirks: binary
         }
 
   @spec describe(person :: __MODULE__.t()) :: binary
@@ -49,7 +52,10 @@ defmodule BladesInTheDark.People do
       style: nil,
       goals: goals(),
       preferred_methods: preferred_methods(),
-      profession: profession()
+      profession: profession(),
+      traits: traits(),
+      interests: interests(),
+      quirks: quirks()
     }
   end
 
@@ -73,12 +79,12 @@ defmodule BladesInTheDark.People do
   end
 
   defp physique() do
-    Config.read(__MODULE__, :family_names)
+    Config.read(__MODULE__, :physique)
     |> Enum.random()
   end
 
   defp gender() do
-    Config.read(__MODULE__, :gender)
+    Config.read(__MODULE__, :gender, :weighted)
     |> Enum.random()
   end
 
@@ -98,6 +104,21 @@ defmodule BladesInTheDark.People do
       die when die > 4 -> Config.read(__MODULE__, :rare_profession)
       _ -> Config.read(__MODULE__, :common_profession)
     end
+    |> Enum.random()
+  end
+
+  defp traits() do
+    Config.read(__MODULE__, :traits)
+    |> Enum.random()
+  end
+
+  def interests do
+    Config.read(__MODULE__, :interests)
+    |> Enum.random()
+  end
+
+  def quirks do
+    Config.read(__MODULE__, :quirks)
     |> Enum.random()
   end
 end
