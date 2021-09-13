@@ -1,10 +1,13 @@
 defmodule BladesInTheDark.Scores do
-  alias BladesInTheDark.NPC
+  alias BladesInTheDark.{Config, NPC}
 
   @score_keys [
     :client,
     :work,
-    :target
+    :target,
+    :twist,
+    :connection,
+    :faction
   ]
 
   defstruct @score_keys
@@ -21,6 +24,12 @@ defmodule BladesInTheDark.Scores do
   end
 
   defp work() do
-    List.flatten([])
+    config = Config.read(__MODULE__, :work, :headlines)
+
+    Map.keys(config)
+    |> Enum.flat_map(fn key ->
+      Map.get(config, key)
+    end)
+    |> Enum.random()
   end
 end

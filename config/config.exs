@@ -39,7 +39,8 @@ config :bladesinthedark, BladesInTheDark.NPC,
   nicknames: read_config.("npc_nicknames")
 
 config :bladesinthedark, BladesInTheDark.Scores,
-  work: read_config.("scores_work")
+  work: read_config.("scores_work"),
+  clients_targets: read_config.("scores_clients_targets")
 
 # Configures Elixir's Logger
 config :logger, :console,
