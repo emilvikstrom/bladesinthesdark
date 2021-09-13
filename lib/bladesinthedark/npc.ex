@@ -1,4 +1,4 @@
-defmodule BladesInTheDark.People do
+defmodule BladesInTheDark.NPC do
   alias BladesInTheDark.Config
 
   defstruct [
