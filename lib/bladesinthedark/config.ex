@@ -12,6 +12,14 @@ defmodule BladesInTheDark.Config do
     |> Enum.flat_map(&expand/1)
   end
 
+  def read(module, key, :headlines) do
+    {_, map} =
+      read(module, key)
+      |> Enum.reduce({nil, %{}}, &headline_map/2)
+
+    map
+  end
+
   defp expand(string), do: expand(string, <<>>)
 
   defp expand(":" <> rest, acc), do: expand(rest, String.to_integer(acc), [])
@@ -23,4 +31,14 @@ defmodule BladesInTheDark.Config do
 
   defp expand(_, 0, acc), do: acc
   defp expand(string, amount, acc), do: expand(string, amount - 1, [string | acc])
+
+  defp headline_map(<<"##", key::binary>>, {_current_key, response}) do
+    {key, Map.put(response, key, [])}
+  end
+
+  defp headline_map(value, {current_key, response}) do
+    current_values = Map.get(response, current_key)
+
+    {current_key, %{response | current_key => [value | current_values]}}
+  end
 end

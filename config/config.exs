@@ -38,6 +38,9 @@ config :bladesinthedark, BladesInTheDark.NPC,
   styles: read_config.("npc_styles"),
   nicknames: read_config.("npc_nicknames")
 
+config :bladesinthedark, BladesInTheDark.Scores,
+  work: read_config.("scores_work")
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
