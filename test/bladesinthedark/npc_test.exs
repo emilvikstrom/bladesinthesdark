@@ -12,11 +12,21 @@ defmodule BladesInTheDark.NPCTest do
                family_name: family_name
              } = new_person
 
-      assert BladesInTheDark.Config.read(BladesInTheDark.NPC, :names)
+      assert Config.read(BladesInTheDark.NPC, :names)
              |> Enum.member?(name)
 
-      assert BladesInTheDark.Config.read(BladesInTheDark.NPC, :family_names)
+      assert Config.read(BladesInTheDark.NPC, :family_names)
              |> Enum.member?(family_name)
+    end
+
+    test "with input params" do
+      assert %NPC{
+               name: "testman"
+             } = NPC.new(%{name: "testman"})
+    end
+
+    test "with invalid input params" do
+      assert_raise KeyError, fn -> NPC.new(%{invalid: "data"}) |> IO.inspect() end
     end
   end
 end
