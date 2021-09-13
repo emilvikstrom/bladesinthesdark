@@ -46,10 +46,10 @@ defmodule BladesInTheDark.People do
     %__MODULE__{
       name: name(),
       family_name: family_name(),
-      nickname: nil,
+      nickname: nickname(),
       heritage: heritage(),
       looks: looks(),
-      style: nil,
+      style: style(),
       goals: goals(),
       preferred_methods: preferred_methods(),
       profession: profession(),
@@ -67,6 +67,13 @@ defmodule BladesInTheDark.People do
   defp family_name() do
     Config.read(__MODULE__, :family_names)
     |> Enum.random()
+  end
+
+  defp nickname() do
+    case dice() do
+      result when result > 4 -> Config.read(__MODULE__, :nicknames) |> Enum.random()
+      _ -> nil
+    end
   end
 
   defp heritage() do
@@ -99,9 +106,8 @@ defmodule BladesInTheDark.People do
   end
 
   defp profession() do
-    :rand.uniform(6)
-    |> case do
-      die when die > 4 -> Config.read(__MODULE__, :rare_profession)
+    case dice() do
+      result when result > 4 -> Config.read(__MODULE__, :rare_profession)
       _ -> Config.read(__MODULE__, :common_profession)
     end
     |> Enum.random()
@@ -120,5 +126,14 @@ defmodule BladesInTheDark.People do
   def quirks do
     Config.read(__MODULE__, :quirks)
     |> Enum.random()
+  end
+
+  defp style() do
+    Config.read(__MODULE__, :styles)
+    |> Enum.random()
+  end
+
+  defp dice() do
+    :rand.uniform(6)
   end
 end

@@ -34,7 +34,9 @@ config :bladesinthedark, BladesInTheDark.People,
   rare_profession: read_config.("people_rare_profession"),
   traits: read_config.("people_traits"),
   interests: read_config.("people_interests"),
-  quirks: read_config.("people_quirks")
+  quirks: read_config.("people_quirks"),
+  styles: read_config.("people_styles"),
+  nicknames: read_config.("people_nicknames")
 
 # Configures Elixir's Logger
 config :logger, :console,
