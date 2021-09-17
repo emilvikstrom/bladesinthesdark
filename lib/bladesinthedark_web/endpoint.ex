@@ -7,7 +7,7 @@ defmodule BladesInTheDarkWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_bladesinthedark_key",
-    signing_salt: "HrB+jA7S"
+    signing_salt: "9euDwGUF"
   ]
 
   socket "/socket", BladesInTheDarkWeb.UserSocket,
