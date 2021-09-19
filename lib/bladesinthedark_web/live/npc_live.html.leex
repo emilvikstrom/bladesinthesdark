@@ -1,4 +1,11 @@
 <section class="phx-hero">
-   <%= live_component @socket, BladesInTheDarkWeb.NPCComponent, npc: @npc %>
+  <%= for npc <- @npcs do %>
+    <%= live_component @socket, BladesInTheDarkWeb.NPCComponent, npc: npc %>
+    <br>
+  <% end %>
+  <form phx-change="suggest" phx-submit="update">
+
+    <button type="submit" phx-disable-with="updating...">Update</button>
+  </form>
  </section>
 

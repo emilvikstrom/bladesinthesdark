@@ -8,14 +8,19 @@ defmodule BladesInTheDarkWeb.NPCLive do
   def mount(params, session, socket) do
     IO.inspect(params, label: "Params")
     IO.inspect(session, label: "Session")
-    {:ok, assign(socket, npc: BladesInTheDark.NPC.new())}
+
+    {:ok, assign(socket, npcs: Enum.map(1..3, fn _ -> BladesInTheDark.NPC.new() end))}
   end
 
   @impl true
+  def handle_event("update", params, socket) do
+    {:ok, assign(socket, npcs: Enum.map(1..3, fn _ -> BladesInTheDark.NPC.new() end))}
+  end
+
   def handle_event(field, params, socket) do
-    IO.inspect(params, label: "Field")
+    IO.inspect(field, label: "Field")
     IO.inspect(params, label: "Params")
-    {:noreply, assign(socket, npc: BladesInTheDark.NPC.new())}
+    {:noreply, socket}
   end
 
   # @impl true
